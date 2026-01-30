@@ -7,10 +7,5 @@ class Client(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='clients/')
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        if self.image:
-            crop_image(self.image.path)
-
     def __str__(self):
         return self.name
