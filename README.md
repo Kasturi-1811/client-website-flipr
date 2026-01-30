@@ -23,9 +23,11 @@ This is a full-stack Django web application built as part of a Flipr placement a
 
 ## 🛠 Tech Stack
 - Backend: Django
-- Database: SQLite
+- Database: Postgree-Render
 - Frontend: HTML, CSS
 - Image Processing: Pillow
+- Cloud- Cloudinary- for storing images
+- cloud Deployment - Render
 
 ---
 
