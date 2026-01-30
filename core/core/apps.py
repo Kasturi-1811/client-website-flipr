@@ -20,3 +20,4 @@ class AccountsConfig(AppConfig):
                     email=email,
                     password=password
                 )
+                print(f"Superuser '{username}' created.")
