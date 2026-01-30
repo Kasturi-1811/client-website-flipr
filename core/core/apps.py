@@ -1,6 +1,9 @@
 import os
 from django.apps import AppConfig
 from django.contrib.auth import get_user_model
+import logging
+
+logger = logging.getLogger(__name__)
 
 class AccountsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
@@ -13,6 +16,9 @@ class AccountsConfig(AppConfig):
         email = os.getenv("ADMIN_EMAIL")
         password = os.getenv("ADMIN_PASSWORD")
 
+        logger.error(f"ADMIN_USERNAME={username}")
+        logger.error("READY() CALLED")
+
         if username and password:
             if not User.objects.filter(username=username).exists():
                 User.objects.create_superuser(
@@ -20,4 +26,6 @@ class AccountsConfig(AppConfig):
                     email=email,
                     password=password
                 )
-                print(f"Superuser '{username}' created.")
+                logger.error("ADMIN CREATED")
+            else:
+                logger.error("ADMIN ALREADY EXISTS")
