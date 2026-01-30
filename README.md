@@ -21,7 +21,7 @@ This is a full-stack Django web application built as part of a Flipr placement a
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 - Backend: Django
 - Database: Postgree-Render
 - Frontend: HTML, CSS
